@@ -1,0 +1,1 @@
+# pedantic-semantic-cta-link-generator-html-only
