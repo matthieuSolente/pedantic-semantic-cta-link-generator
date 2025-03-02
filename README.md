@@ -4,7 +4,8 @@ A html only CTA Link Generator based on Mark Robbins Pedantic Semantic CTA Link
 ### html email CTA Link generator by Matthieu Solente
 See a working example on my [codepen](https://codepen.io/matthieuSolente/pen/abRpPOX)
 
-Based on [Mark Robbins](https://www.goodemailcode.com/email-code/link-button) pedantic semantics cta link, updated in april 2023. You'll find all explanations on his blog.
+Based on [Mark Robbins](https://www.goodemailcode.com/email-code/link-button) pedantic semantics cta link, but for which I ultimately developed my own approach with a calculation and a different unit of measurement for the padding. Instead of percentage, I use point values.
+
 
 From its code for a CTA in html, I created this generator that automatically generates the right measures in em, for better accessibility. The peculiarity of this button is that it uses the mso-font-width and mso-text-raise attributes to set the padding on Outlook. I
 
