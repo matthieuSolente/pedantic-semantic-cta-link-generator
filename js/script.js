@@ -28,9 +28,8 @@
     bgcss = 'background-color:'+ $('#bgColor').val();
     emTbPadding = ($('#tbPadding').val() / $('#fontBase').val()).toFixed(1)+'em';
     emLrPadding = ($('#lrPadding').val() / $('#fontBase').val()).toFixed(1)+'em';
-    msoFontWidth = Math.ceil(($('#lrPadding').val() / $('#fontBase').val()) / ($('#fontSize').val() / $('#fontBase').val())*100)+'%';
-    msoTextRaise = Math.ceil(($('#tbPadding').val() / $('#fontBase').val()) / ($('#fontSize').val() / $('#fontBase').val())*100)*2+'%';
-    htmlMsoTextRaise = Math.ceil(($('#tbPadding').val()/$('#fontBase').val()) / ($('#fontSize').val() / $('#fontBase').val())*100)+'%';
+    msoFontWidth = Math.floor(($('#lrPadding').val() / $('#fontBase').val()) / ($('#fontSize').val() / $('#fontBase').val())*100)+'%';
+     msoTextRaise =(($('#tbPadding').val() * 75 / 100)).toFixed(2)+'pt';
     if($('#fontBold').is(':checked')){
       fontBold = 'font-weight:bold;';
     }else{
@@ -42,8 +41,8 @@
       textTransform = '';
     }
  
-    generatePreview = '<a '+btnClass+' href="'+urlLink+'" style="font-family: '+fontFamily+'; font-size:'+fontEm+';background-color:'+ bgColor +';text-decoration: none;text-underline-color:'+bgColor+';'+textTransform+' padding: '+emTbPadding+' '+emLrPadding+'; color:'+fontColor+';'+fontBold+' display:inline-block; '+bRadius+'mso-padding-alt:0px;">\n<!--[if mso]><i style="mso-font-width:'+msoFontWidth+';mso-text-raise:'+msoTextRaise+'" hidden>&#8195;</i><span style="mso-text-raise:'+htmlMsoTextRaise+'"><![endif]-->'+btnText+'<!--[if mso]></span><i style="mso-font-width:'+msoFontWidth+';" hidden>&#8195;&#8203;</i><![endif]--></a>';
-    generateCode = '&lt;a '+btnClass+' href=&quot;'+urlLink+'&quot; style=&quot;font-family: '+fontFamily+'; font-size:'+fontEm+';background-color:'+ bgColor +';text-decoration: none;text-underline-color:'+bgColor+';'+textTransform+' padding: '+emTbPadding+' '+emLrPadding+'; color:'+fontColor+';'+fontBold+' display:inline-block; '+bRadius+'mso-padding-alt:0px;&quot;&gt;\n&lt;!--[if mso]&gt;&lt;i style=&quot;mso-font-width:'+msoFontWidth+';mso-text-raise:'+msoTextRaise+'&quot; hidden&gt;&amp;#8195;&lt;/i&gt;&lt;span style=&quot;mso-text-raise:'+htmlMsoTextRaise+'&quot;&gt;&lt;![endif]--&gt;'+btnText+'&lt;!--[if mso]&gt;&lt;/span&gt;&lt;i style=&quot;mso-font-width:'+msoFontWidth+';&quot; hidden&gt;&amp;#8195;&amp;#8203;&lt;/i&gt;&lt;![endif]--&gt;&lt;/a&gt;'; 
+    generatePreview = '<a '+btnClass+' href="'+urlLink+'" style="font-family: '+fontFamily+'; font-size:'+fontEm+';background-color:'+ bgColor +';text-decoration: none;text-underline-color:'+bgColor+';'+textTransform+' padding: '+emTbPadding+' '+emLrPadding+'; color:'+fontColor+';'+fontBold+' display:inline-block; '+bRadius+'mso-padding-alt:0px;">\n<i style="mso-font-width:'+msoFontWidth+';mso-text-raise:'+msoTextRaise+'" hidden>&emsp;</i><![endif]-->'+btnText+'<!--[if mso]><!--[if mso]><i style="mso-font-width:'+msoFontWidth+';mso-text-raise:-'+msoTextRaise+'" hidden>&emsp;&#8203;</i><![endif]--></a>';
+    generateCode = '&lt;a '+btnClass+' href=&quot;'+urlLink+'&quot; style=&quot;font-family: '+fontFamily+'; font-size:'+fontEm+';background-color:'+ bgColor +';text-decoration: none;text-underline-color:'+bgColor+';'+textTransform+' padding: '+emTbPadding+' '+emLrPadding+'; color:'+fontColor+';'+fontBold+' display:inline-block; '+bRadius+'mso-padding-alt:0px;&quot;&gt;\n&lt;i style=&quot;mso-font-width:'+msoFontWidth+';mso-text-raise:'+msoTextRaise+'&quot; hidden&gt;&amp;emsp;&lt;/i&gt;&lt;![endif]--&gt;'+btnText+'&lt;!--[if mso]&gt;&lt;!--[if mso]&gt;&lt;i style=&quot;mso-font-width:'+msoFontWidth+';mso-text-raise:-'+msoTextRaise+'&quot; hidden&gt;&amp;emsp;&amp;#8203;&lt;/i&gt;&lt;![endif]--&gt;&lt;/a&gt;'; 
    
   
   $('#preview').html(generatePreview);
