@@ -2,7 +2,7 @@
 A html only CTA Link Generator based on Mark Robbins Pedantic Semantic CTA Link
 
 ### html email CTA Link generator by Matthieu Solente
-See a working example on my [codepen](https://codepen.io/matthieuSolente/pen/abRpPOX)
+
 
 Based on [Mark Robbins](https://www.goodemailcode.com/email-code/link-button) pedantic semantics cta link, but for which I ultimately developed my own approach with a calculation and a different unit of measurement for the padding. Instead of percentage, I use point values.
 
