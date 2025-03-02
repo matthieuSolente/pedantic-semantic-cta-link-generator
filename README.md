@@ -1,5 +1,5 @@
 # Pedantic Semantic CTA Link Generator - HTML only
-A html only CTA Link Generator based on Mark Robbins Pedantic Semantic CTA Link
+
 
 ### html email CTA Link generator by Matthieu Solente
 
